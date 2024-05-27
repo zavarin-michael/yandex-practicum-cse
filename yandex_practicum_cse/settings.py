@@ -27,8 +27,8 @@ SECRET_KEY = "django-insecure-z0012fa=vnqr%@&-an=h6mt4f@#g#g)a1h9ozq)@bt(!rj4eh5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://*.containers.yandexcloud.net']
 
 # Application definition
 

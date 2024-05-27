@@ -1,12 +1,17 @@
 version: "3.9"
 
 services:
-  db:
-    image: postgres
+  django:
     environment:
-      - POSTGRES_DB=local_db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-#      - POSTGRES_INITDB_ARGS=--locale=en_US.utf8
+      - DJANGO_SETTINGS_MODULE=yandex_practicum_cse.production_settings
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - YDB_HOST=${YDB_HOST}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
     ports:
-      - "5432:5432"
+      - "8080:8080"
+    restart: always
