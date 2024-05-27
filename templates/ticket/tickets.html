@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <main role="main" style="display: flex; flex-direction: column;  gap: 20px">
+        {% for ticket in tickets %}
+            <div style="display: flex; flex-direction: column">
+                <div>
+                    Имя: {{ ticket.name }}
+                </div>
+                <div>
+                    Отзыв: {{ ticket.comment }}
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% include "shared/head.html" %}
+</head>
+<body>
+{% include "shared/header.html" %}
+
+{% block content %}{% endblock content %}
+
+{% include "shared/footer.html" %}
+</body>
+</html>
