@@ -8,6 +8,8 @@ from tickets.table import UserModel
 
 def get_tickets_page(request):
     if request.method == "POST":
+        if not UserModel.exists():
+            UserModel.create_table(wait=True)
         # create a form instance and populate it with data from the request:
         form = CommentForm(request.POST)
         # check whether it's valid:
