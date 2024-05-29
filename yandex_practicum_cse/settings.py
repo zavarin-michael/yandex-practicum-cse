@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-z0012fa=vnqr%@&-an=h6mt4f@#g#g)a1h9ozq)@bt(!rj4eh5
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://*.containers.yandexcloud.net']
+CSRF_TRUSTED_ORIGINS = ['https://*.apigw.yandexcloud.net']
 
 # Application definition
 

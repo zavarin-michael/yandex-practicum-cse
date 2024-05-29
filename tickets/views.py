@@ -7,9 +7,10 @@ from tickets.table import UserModel
 # Create your views here.
 
 def get_tickets_page(request):
+    if not UserModel.exists():
+        UserModel.create_table(read_capacity_units=100, write_capacity_units=100, wait=True)
+
     if request.method == "POST":
-        if not UserModel.exists():
-            UserModel.create_table(wait=True)
         # create a form instance and populate it with data from the request:
         form = CommentForm(request.POST)
         # check whether it's valid:
