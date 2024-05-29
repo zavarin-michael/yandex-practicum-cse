@@ -6,6 +6,7 @@ from tickets.table import UserModel
 
 # Create your views here.
 
+@csrf_exempt
 def get_tickets_page(request):
     if not UserModel.exists():
         UserModel.create_table(read_capacity_units=100, write_capacity_units=100, wait=True)
