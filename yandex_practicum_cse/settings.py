@@ -126,4 +126,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 YDB_HOST = env('YDB_HOST')
-VERSION = env('VERSION')
+VERSION = env('VERSION', default="latest")
+REPLICA_NAME = env('REPLICA_NAME', default="default")

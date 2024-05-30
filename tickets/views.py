@@ -24,4 +24,6 @@ def get_tickets_page(request):
             user.save()
 
     form = CommentForm()
-    return render(request, "ticket/tickets.html", {"tickets": list(UserModel.scan()), "form": form, "version": settings.VERSION})
+    return render(request, "ticket/tickets.html",
+                  {"tickets": list(UserModel.scan()), "form": form, "version": settings.VERSION,
+                   "replica_name": settings.REPLICA_NAME})
