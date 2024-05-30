@@ -4,6 +4,9 @@ from tickets.forms import CommentForm
 from tickets.table import UserModel
 from django.views.decorators.csrf import csrf_exempt
 
+from yandex_practicum_cse import settings
+
+
 # Create your views here.
 
 
@@ -21,4 +24,4 @@ def get_tickets_page(request):
             user.save()
 
     form = CommentForm()
-    return render(request, "ticket/tickets.html", {"tickets": list(UserModel.scan()), "form": form})
+    return render(request, "ticket/tickets.html", {"tickets": list(UserModel.scan()), "form": form, "version": settings.VERSION})
